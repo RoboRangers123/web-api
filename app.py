@@ -9,7 +9,7 @@ collection=db['iotdata-test']
 alertsCollection=db['alerts']
 devicesCollection=db['devices']
 
-api=Flask(_name_)
+api=Flask('__name__')
 CORS(api)
 
 @api.route('/')
@@ -109,7 +109,7 @@ def get_devices():
         return jsonify({"error": str(e)}), 500
 
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(
         host='0.0.0.0',
         port=2000,debug=True)
